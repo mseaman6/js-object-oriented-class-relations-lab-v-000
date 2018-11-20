@@ -21,11 +21,9 @@ class Driver {
 
   passengers() {
     //returns all passengers that a driver has taken - will need to use through relationship
-    let passList = []
-    for (let trip of this.trips()) {
-      passList.push(trip.passenger());
-    };
-    return passList
+    return this.trips().map(trip => {
+      return trip.passenger();
+    })
   }
 }
 
